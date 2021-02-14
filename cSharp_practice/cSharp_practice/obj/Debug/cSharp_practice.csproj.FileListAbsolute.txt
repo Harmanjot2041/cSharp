@@ -1,0 +1,6 @@
+D:\net sol\Csharp\cSharp_practice\cSharp_practice\bin\Debug\cSharp_practice.exe.config
+D:\net sol\Csharp\cSharp_practice\cSharp_practice\bin\Debug\cSharp_practice.exe
+D:\net sol\Csharp\cSharp_practice\cSharp_practice\bin\Debug\cSharp_practice.pdb
+D:\net sol\Csharp\cSharp_practice\cSharp_practice\obj\Debug\cSharp_practice.csprojAssemblyReference.cache
+D:\net sol\Csharp\cSharp_practice\cSharp_practice\obj\Debug\cSharp_practice.exe
+D:\net sol\Csharp\cSharp_practice\cSharp_practice\obj\Debug\cSharp_practice.pdb
