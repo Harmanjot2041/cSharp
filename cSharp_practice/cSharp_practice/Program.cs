@@ -14,12 +14,15 @@ namespace cSharp_practice
         static void Main(string[] args)
         {
             //Console.WriteLine(args);
-            Area rectangle = new Area();
+            
             Console.Write("Enter length of Reactangle: ");
             double length = Convert.ToDouble(Console.ReadLine());
             Console.Write("Enter width of Reactangle: ");
             double width = Convert.ToDouble(Console.ReadLine());
-            rectangle.AcceptDetails<double>(12.4, 25.3);
+            Area rectangle = new Area(length, width);
+            rectangle.AcceptDetails<double>(12.4, 24.4) ;
+            
+            Area copy = new Area(rectangle);
             Console.WriteLine("Area of Rectangle is: " + rectangle.GetArea());
             int temp = 37;
             Console.WriteLine(temp.ToString());
@@ -129,7 +132,7 @@ namespace cSharp_practice
 
             }
             //ArrayList collections 
-            ArrayList arrList = new ArrayList();
+            List<int> arrList = new List<int>();
             Console.WriteLine("Size of ArrayList when NO element is inserted: " + arrList.Capacity);
             arrList.Add(1);
             Console.WriteLine("Size of ArrayList when 1 element is inserted: " + arrList.Capacity);
@@ -153,7 +156,7 @@ namespace cSharp_practice
             Console.WriteLine("Data from hashTables : ");
             foreach(object key in hashTable.Keys)
             {
-                Console.WriteLine(key + " : " + hashTable[key]);
+                Console.WriteLine(key + " : " + hashTable[key] + " Hashed code: " + key.GetHashCode());
             }
             //Console.WriteLine("Name from Hashtable Data : " + hashTable["Name"]);
             //Console.WriteLine("Age from Hashtable Data : " + hashTable["Age"]);
@@ -176,8 +179,70 @@ namespace cSharp_practice
             Console.WriteLine(Math.Pow(val1,val2));
             Console.WriteLine(Math.Floor(145.23));
             Console.WriteLine(Math.Tan(val1));
-
+            // static class
+            //StaticClass abc = new StaticClass();
+           // abc.hey1 = "abc";
+           // StaticClass.hey = "hey";
+           // StaticClass abcd = new StaticClass();
+            //abcd.hey = "abcd";
+            //StaticClass.StaticMember();
+            // static int a = 2;
+            Console.WriteLine(StaticClass.hey ="hey1  "  + StaticClass.Func(1));
+            Console.WriteLine(StaticClass.hey = "hey2   " + StaticClass.Func(2));
+            InnterfaceClass propObj = new InnterfaceClass();
+            propObj.Code = 24;
             Console.ReadKey();
+        }
+    }
+      static class StaticClass
+    {
+        //public string hey1;
+         //int a = 2;
+        public  static string hey;
+        public   static int   Func(int a)
+        {
+            return a;
+        }
+         static StaticClass()
+        {
+            //hey = "hey1";
+            Console.WriteLine("You are in static class and called only once" + hey);
+        }
+    }
+    public abstract class AbstractClass // abstract class - we have to override the absract method of class in child class.
+    {
+        public string name ;
+        public int id;
+        public abstract void func();
+    }
+    // interface 
+    public interface InterfaceEg
+    {
+        void func();
+        double temp1();
+
+    }
+    public class InnterfaceClass : InterfaceEg
+    {
+        int val = 25;
+        public void func()
+        {
+            
+        }
+        public double temp1()
+        {
+            return 34.5;
+        }
+        public int Code
+        {
+            get
+            {
+                return val;
+            }
+            set
+            {
+                val = value;
+            }
         }
     }
     class Area
@@ -185,11 +250,21 @@ namespace cSharp_practice
     {
         double length;
         double width;
-        public void AcceptDetails<T>(T length,T width)
+        public  Area (double length,double width) //parameterize type
         {
              this.length = length;
             this.width = width;
             //Console.WriteLine(length);
+        }
+        public void AcceptDetails<T> (T len, T wid)
+        {
+            dynamic leng = len;
+            dynamic widt = wid;
+        }
+        public Area(Area rectangle) //copy constructor
+        {
+            this.length = rectangle.length;
+            this.width = rectangle.width;
         }
         public double GetArea()
         {
@@ -199,3 +274,12 @@ namespace cSharp_practice
 
     }
 }
+// 16-02-2021
+//classes and objects -implement 
+//constractor -implement
+//types of classes 
+//access  modifiers in c# -
+//abstract vs interfaces -
+//interfaces - implements
+//properties - (get,set)-implement
+//events 
