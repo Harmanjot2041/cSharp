@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+public delegate int MyDelegate(int props);
 namespace cSharp_practice
 {
     class Program
     {
         enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
+        
 
         static void Main(string[] args)
         {
@@ -24,6 +27,14 @@ namespace cSharp_practice
             
             Area copy = new Area(rectangle);
             Console.WriteLine("Area of Rectangle is: " + rectangle.GetArea());
+            //rectangle.Free();
+            //Delegatesssssssssssss
+            MyDelegate add = new MyDelegate(copy.Add);
+            MyDelegate minus = new MyDelegate(copy.Minus);
+            int check = 5;
+            check =add(check);
+            check = minus(check);
+            Console.WriteLine(" value using Delegate : "+ check);
             int temp = 37;
             Console.WriteLine(temp.ToString());
             for (int i = 0; i < 5; i++)
@@ -158,6 +169,11 @@ namespace cSharp_practice
             {
                 Console.WriteLine(key + " : " + hashTable[key] + " Hashed code: " + key.GetHashCode());
             }
+            //LINQ
+            int[] marks = { 1,2,3,4,5,6,7,8,9 };
+            var maxMark = from mark in marks where mark > 4 orderby mark descending select mark;
+            foreach(int j in maxMark)
+                Console.WriteLine("data from LINQ : " + j);
             //Console.WriteLine("Name from Hashtable Data : " + hashTable["Name"]);
             //Console.WriteLine("Age from Hashtable Data : " + hashTable["Age"]);
             //Console.WriteLine("id from Hashtable Data : " + hashTable["id"]);
@@ -187,8 +203,13 @@ namespace cSharp_practice
             //abcd.hey = "abcd";
             //StaticClass.StaticMember();
             // static int a = 2;
+           // public delegate void delegateEg(int props);
             Console.WriteLine(StaticClass.hey ="hey1  "  + StaticClass.Func(1));
             Console.WriteLine(StaticClass.hey = "hey2   " + StaticClass.Func(2));
+            //file in c#
+            File.WriteAllText("fileFromC#.txt", "hey i am sending you in txt file Good byeeeeeeeee");
+            string fileData = File.ReadAllText("fileFromC#.txt");
+            Console.WriteLine(fileData);
             InnterfaceClass propObj = new InnterfaceClass();
             propObj.Code = 24;
             Console.ReadKey();
@@ -248,6 +269,15 @@ namespace cSharp_practice
     class Area
 
     {
+        
+        public int Add(int props)
+        {
+            return ++props;
+        }
+        public int Minus(int props)
+        {
+            return --props;
+        }
         double length;
         double width;
         public  Area (double length,double width) //parameterize type
@@ -255,6 +285,10 @@ namespace cSharp_practice
              this.length = length;
             this.width = width;
             //Console.WriteLine(length);
+        }
+        ~Area ()
+        {
+            Console.WriteLine("byeeewwe");
         }
         public void AcceptDetails<T> (T len, T wid)
         {
