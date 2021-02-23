@@ -12,7 +12,15 @@ namespace cSharp_practice
     class Program
     {
         enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
-        
+        public static IEnumerable<string> display()
+        {
+            int[] arr = new int[] { 1, 2, 3 ,4 ,5 };
+
+            foreach (var val in arr)
+            {
+                yield return val.ToString();
+            }
+        }
 
         static void Main(string[] args)
         {
@@ -169,6 +177,22 @@ namespace cSharp_practice
             {
                 Console.WriteLine(key + " : " + hashTable[key] + " Hashed code: " + key.GetHashCode());
             }
+            //indexerssssssss
+            Console.WriteLine("data using indexerss  ...");
+            IndexerClass indexerObj = new IndexerClass();
+            Console.WriteLine(" name : " + indexerObj["name"]);
+            Console.WriteLine(" age : " + indexerObj["age"]);
+            Console.WriteLine(" company : " + indexerObj["company"]);
+            Console.WriteLine(" number : " + indexerObj["number"]);
+            Console.WriteLine(" university : " + indexerObj["uni"]);
+
+            // itratorss
+            Console.WriteLine("data through itrators : ");
+            IEnumerable<string> items = display();
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
             //LINQ
             int[] marks = { 1,2,3,4,5,6,7,8,9 };
             var maxMark = from mark in marks where mark > 4 orderby mark descending select mark;
@@ -306,6 +330,35 @@ namespace cSharp_practice
         }
 
 
+    }
+    class IndexerClass
+    {
+        string name = "harman";
+        int age = 21;
+        string company = "Net solutions ";
+        string number = "9464968432";
+        string uni = "PU";
+        public object this[string index]
+        {
+            get
+            {
+                if (index == "name")
+                    return name;
+                else if (index == "age")
+                    return age;
+                else if (index == "company")
+                    return company;
+                else if (index == "number")
+                    return number;
+                else if (index == "uni")
+                    return uni;
+                return null;
+            }
+            set
+            {
+                //
+            }
+        }
     }
 }
 // 16-02-2021

@@ -1,0 +1,11 @@
+D:\net sol\Csharp\cSharp_practice\cSharpAssignment1\bin\Debug\netcoreapp3.1\cSharpAssignment1.exe
+D:\net sol\Csharp\cSharp_practice\cSharpAssignment1\bin\Debug\netcoreapp3.1\cSharpAssignment1.deps.json
+D:\net sol\Csharp\cSharp_practice\cSharpAssignment1\bin\Debug\netcoreapp3.1\cSharpAssignment1.runtimeconfig.json
+D:\net sol\Csharp\cSharp_practice\cSharpAssignment1\bin\Debug\netcoreapp3.1\cSharpAssignment1.runtimeconfig.dev.json
+D:\net sol\Csharp\cSharp_practice\cSharpAssignment1\bin\Debug\netcoreapp3.1\cSharpAssignment1.dll
+D:\net sol\Csharp\cSharp_practice\cSharpAssignment1\bin\Debug\netcoreapp3.1\cSharpAssignment1.pdb
+D:\net sol\Csharp\cSharp_practice\cSharpAssignment1\obj\Debug\netcoreapp3.1\cSharpAssignment1.csprojAssemblyReference.cache
+D:\net sol\Csharp\cSharp_practice\cSharpAssignment1\obj\Debug\netcoreapp3.1\cSharpAssignment1.AssemblyInfoInputs.cache
+D:\net sol\Csharp\cSharp_practice\cSharpAssignment1\obj\Debug\netcoreapp3.1\cSharpAssignment1.AssemblyInfo.cs
+D:\net sol\Csharp\cSharp_practice\cSharpAssignment1\obj\Debug\netcoreapp3.1\cSharpAssignment1.dll
+D:\net sol\Csharp\cSharp_practice\cSharpAssignment1\obj\Debug\netcoreapp3.1\cSharpAssignment1.pdb
